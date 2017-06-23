@@ -1,5 +1,5 @@
-# Magento-2.1.6
-Модуль Portmone для CMS Magento 2.1.6 
+# Magento-2.1.X
+Модуль Portmone для CMS Magento 2.1.X
 
 == Description == 
 Модуль предназначен для CMS Magento 2.1.x и позволяет использовать Portmone в качестве способа оплат.
