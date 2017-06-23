@@ -1,4 +1,4 @@
-# Magento-2.1.X
+# Magento-2.1.
 Модуль Portmone для CMS Magento 2.1.X
 
 == Description == 
