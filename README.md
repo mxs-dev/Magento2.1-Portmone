@@ -1,34 +1,42 @@
-# Magento-2.1.
-Модуль Portmone для CMS Magento 2.1.X
+# Плагин Portmone.com для Magento 2.1.x
 
-== Description == 
-Модуль предназначен для CMS Magento 2.1.x и позволяет использовать Portmone в качестве способа оплат.
+Creator: Portmone.com   
+Tags: Portmone, Magento, payment, payment gateway, credit card, debit card    
+Requires at least: Magento 2.1.x  
+License: Payment Card Industry Data Security Standard (PCI DSS) 
+License URI: [License](https://www.portmone.com.ua/r3/uk/security/) 
 
-Модуль Portmone позволит вашим клиентам быстро и безопасно осуществлять платежи оплаты с карт VISA и Masterсard в вашем магазине. Простые и понятные цены, первоклассный анализ мошенничества и круглосуточная поддержка.
+Расширение для Magento позволяет клиентам осуществлять платежи с помощью [Portmone.com](https://www.portmone.com.ua/r3/).
 
-Сайт разработчикa: https://www.portmone.com.ua/r3/uk/
-Версия: 1.0.0
-Contributor: Portmone Tags: Portmone, open cart, payment, payment gateway, credit card, debit card Requires at least: Open Сart 2.1.0.1 License: Payment Card Industry Data Security Standard (PCI DSS) License URI: https://www.portmone.com.ua/r3/uk/security/
+### Описание
+Этот модуль добавляет Portmone.com в качестве способа оплаты в ваш магазин Magento. 
+Portmone.com может безопасно, быстро и легко принять VISA и MasterCard в вашем магазине за считанные минуты.
+Простые и понятные цены, первоклассный анализ мошенничества и круглосуточная поддержка.
+Для работы модуля необходима регистрация в сервисе.
 
-= Start with Portmone = 
-Create Free Portmone Account https://www.portmone.com.ua/r3/ecommerce/sign-up
-
-= Allowed currencies = 
+Регистрация в Portmone.com: [Create Free Portmone Account](https://www.portmone.com.ua/r3/ecommerce/sign-up)    
 С нами ваши клиенты могут совершать покупки в UAH.
 
-== Installation ==
-
-1.Убедитесь в соответствии версий модуля и вашей CMS, они должны совпадать.
-2.Зайдите в корневую папку своего сайта.
-3.Загрузите папку "app" в корень Вашего сайта. НЕ переживайте, файлы не удалятся, только добавяться новые.
-
-Установка через консоль: 
-
-4.В консоли перейдите в корень сайта и введите следующие команды
+### Ручная установка
+1.  Зайдите в корневую папку своего сайта;
+2.  Загрузите папку "app" в корень Вашго сайта. НЕ переживайте , файлы не удалятся, только добавяться новые; 
+4. В консоли перейдите в корень сайта и введите следующие команды:
 	php bin/magento module:enable PortmonePayment_Portmone
 	php bin/magento setup:upgrade
 	php bin/magento setup:di:compile
 
-Настройка	
-5.В админ панели Вашего сайта перейдите во вкладку Store->Configuration->Sales->Payment Methods (Магазин->Конфигурация->Продажи->Методы->оплаты)
-6.Заполните все настройки. 
+### Настройка модуля
+1.  В админ панели Вашего сайта перейдите во вкладку Store->Configuration->Sales->Payment Methods (Магазин->Конфигурация->Продажи->Методы->оплаты)
+
+5.  Заполните:
+    - «Идентификатор магазина в системе Portmone(Payee ID)»;
+    - «Логин Интернет-магазина в системе Portmone»;
+    - «Пароль Интернет-магазина в системе Portmone»;    
+    Эти параметры предоставляет менеджер Portmone.com; 
+    - прочие поля заполните по своему усмотрению.
+
+6. Нажмите кнопку «Сохранить».
+
+Метод активен и появится в списке оплат вашего магазина.    
+P.S. Portmone, принимает только Гривны (UAH).   
+P.S. Сумма платежа не конверируется в валюту Гривны(UAH) автоматически. В магазине по умолчанию должна быть валюта Гривны (UAH).
