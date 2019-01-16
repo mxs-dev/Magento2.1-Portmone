@@ -1,0 +1,40 @@
+<?php
+/**
+ * @var \PortmonePayment\Portmone\Block\PaymentInfo $this
+ */
+?>
+<div class="iwd_success_page_wrapper iwd_main_wrapper">
+    <div class="iwd_opc_alternative_wrapper">
+        <div class="iwd_opc_column iwd_opc_success_page_column">
+            <div class="iwd_opc_alternative_column">
+                <div class="iwd_opc_universal_wrapper iwd_opc_column_name">
+                    Оплата заказа #<?=$this->getOrderId()?>
+                </div>
+                <div class="iwd_opc_column_content">
+                    <div class="iwd_opc_universal_wrapper iwd_success_page_info">
+                        <?php if ($this->getSuccess()): ?>
+                            <p>Оплата с помощью системы Портмоне прошла успешно.</p>
+                            <div class="iwd_opc_universal_wrapper">
+                                <a href="<?=$this->getReceiptUrl()?>" class="iwd_opc_button" title="Загрузить квитанцио о платеже">
+                                    Загрузить квитанцио о платеже
+                                </a>
+                            </div>
+                        <?php else: ?>
+                            <p>Ошибка оплаты с помощью портмоне. Пожалуйста попробуйте позже</p>
+                            <div class="portmone-block">
+                                <div class="pm button">
+                                    <form action="<?php echo $this->getHelper()->getActionUrl(); ?>" method="POST" name="portmone_gateway">
+                                        <?php foreach($this->getHelper()->getPostData($this->getOrderId()) as $key=>$value): ?>
+                                            <input type="hidden" name="<?php echo $key; ?>" value="<?php echo $value; ?>"/>
+                                        <?php endforeach; ?>
+                                        <button type="submit" class="action primary continue">Оплатить через Portmone</button>
+                                    </form>
+                                </div>
+                            </div>
+                        <?php endif;?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
